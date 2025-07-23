@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	grab_focus()
+	_focus_start_button()
 
 func _on_start_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
@@ -12,5 +12,5 @@ func _on_options_button_pressed():
 func _on_quit_button_pressed():
 	get_tree().quit()
 
-func grab_focus():
+func _focus_start_button():
 	$VBoxContainer/StartButton.grab_focus()
