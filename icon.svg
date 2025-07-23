@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simple black circle for Steamboat Willie icon -->
+  <circle cx="64" cy="64" r="48" fill="#000000"/>
+  <!-- Simple white eyes -->
+  <circle cx="52" cy="52" r="8" fill="#FFFFFF"/>
+  <circle cx="76" cy="52" r="8" fill="#FFFFFF"/>
+  <!-- Simple white smile -->
+  <path d="M 40 80 Q 64 96 88 80" stroke="#FFFFFF" stroke-width="6" fill="none"/>
+</svg>

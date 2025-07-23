@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git --version)",
+      "Bash(git clone:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)",
+      "Bash(rmdir:*)",
+      "Bash(rm:*)",
+      "Bash(git pull:*)"
+    ],
+    "deny": []
+  }
+}
