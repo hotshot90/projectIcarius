@@ -1,0 +1,64 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bvkx8f2d9q1yw"]
+
+[resource]
+animations = [{
+"frames": [],
+"loop": true,
+"name": "idle",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": false,
+"name": "jump",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": "run",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": false,
+"name": "hit_attack",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": "kick_attack",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": "hurt",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": false,
+"name": "roll",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": false,
+"name": "die",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": "walk_up",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": "walk_down",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": "walk_left",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": "walk_right",
+"speed": 10.0
+}]

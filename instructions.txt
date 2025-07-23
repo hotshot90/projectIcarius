@@ -1,0 +1,225 @@
+
+GOAL:
+Use mouse clicks to move the player
+
+
+Player stays centered on the screen until reaching the edge of the playing area
+
+
+Environment made from isometric images
+
+
+Use the Steamboat Willie sprite as the main character
+
+
+
+Step-by-Step Instructions
+
+1. Install Godot 4.x
+Download from: https://godotengine.org/download
+
+
+Use the standard editor, not the mono version (unless you're using C#).
+
+
+
+2. Create New Project
+Launch Godot
+
+
+Click "New Project" → Choose a folder → Name it (e.g., IsometricRPG)
+
+
+Set the renderer to Forward+ or Mobile for Android export
+
+
+Click "Create & Edit"
+
+
+
+3. Setup Project Structure
+In the FileSystem tab, create folders:
+cpp
+CopyEdit
+res://
+  ├── scenes/
+  ├── sprites/
+  ├── tiles/
+  ├── scripts/
+
+
+4. Import Your Character Sprite
+Download the Steamboat Willie sprite from Itch.io
+
+
+Drag the images into the sprites/ folder
+
+
+Select the sprite sheet in the file browser → Set Animation Frames if it’s a sheet
+
+
+Use SpriteFrames in AnimatedSprite2D for animations like walk_up, walk_down, etc.
+
+
+
+5. Create Player Scene
+Right-click scenes/ → New Scene
+
+
+Root node: CharacterBody2D
+
+
+Add a child node: AnimatedSprite2D → set your sprite
+
+
+Add another child: Camera2D → set Current = true, Drag Margin H/V = 0
+
+
+Save scene as player.tscn
+
+
+Player stays centered because the Camera2D is set to follow it directly.
+
+6. Script the Player Movement (Click-to-Move)
+Attach a script to CharacterBody2D:
+gdscript
+CopyEdit
+# scripts/player.gd
+extends CharacterBody2D
+
+@export var move_speed := 100.0
+var target_position: Vector2
+
+func _ready():
+    target_position = global_position
+
+func _input(event):
+    if event is InputEventMouseButton and event.pressed:
+        target_position = get_global_mouse_position()
+
+func _physics_process(delta):
+    var direction = (target_position - global_position).normalized()
+    if global_position.distance_to(target_position) > 5:
+        velocity = direction * move_speed
+        move_and_slide()
+    else:
+        velocity = Vector2.ZERO
+
+
+7. Setup the World (Isometric Environment)
+Option 1: Static Images
+Drag in images as Sprite2D nodes
+
+
+Position them carefully in isometric layout (approx. 2:1 ratio — e.g., tile 128x64)
+
+
+Option 2: TileMap (Recommended)
+Right-click scenes/ → New Scene
+
+
+Root node: Node2D
+
+
+Add a child node: TileMap
+
+
+Set TileSet to your isometric tiles (create it in the editor)
+
+
+In the TileMap node:
+
+
+Set Mode = Isometric
+
+
+Set cell size to match tiles (e.g., 128x64)
+
+
+Save scene as world.tscn
+
+
+7.5 create NPC. 
+Squares are friends, they shoot lasers at anything that gets close to the main character 
+Swarms of triangles come at the payer. The player must dodge or else instant game over.
+
+8. Create Main Scene
+New Scene → Root: Node2D
+
+
+Add world.tscn as a child
+
+
+Add player.tscn as a child → position it in the middle of the map
+
+
+Save scene as main.tscn
+
+
+
+
+9. Set Main Scene & Test
+Go to Project > Project Settings > Application > Run > Main Scene
+
+
+Set it to main.tscn
+
+
+Press F5 to run
+
+
+You should see:
+Player centered on screen
+
+
+Click and move behavior
+
+
+Isometric environment using tiles or images
+
+
+
+10. (Optional) Android Export Setup
+Once you’re ready to deploy:
+Go to Project > Export > Add Android
+
+
+Follow instructions to set up:
+
+
+Android SDK
+
+
+Debug keystore
+
+
+Export to .apk
+
+
+
+Notes
+Isometric movement logic is already handled by path direction, but for tile-based isometric A* pathfinding, you'll want a proper navmesh or GridMap later.
+
+
+You’ll likely want to animate different directions based on click angle.
+
+
+Use YSort nodes or layers to handle depth layering in an isometric setup.
+
+
+
+ Next Steps
+Add animation logic (walk in correct direction)
+
+
+Implement collision detection (walls, objects)
+
+
+Add NPCs or enemies
+
+
+Inventory and dialogue systems
+
+
+Save/load game data
+

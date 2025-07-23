@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj7y2qxvnfkbf"]
+
+[ext_resource type="Script" uid="uid://ckslsisy6howp" path="res://scripts/square_npc.gd" id="1_2v8jy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nkiq"]
+size = Vector2(24, 24)
+
+[node name="SquareNPC" type="CharacterBody2D" groups=["npcs"]]
+script = ExtResource("1_2v8jy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+color = Color(0, 0.8, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1nkiq")

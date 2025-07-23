@@ -1,0 +1,59 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b9mkx2f3vq7yw"]
+
+[ext_resource type="Texture2D" uid="uid://ct8y1hq6mdptn" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 00.png" id="1_0a"]
+[ext_resource type="Texture2D" uid="uid://cfxhjy5t8xpvv" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 01.png" id="1_1a"]
+[ext_resource type="Texture2D" uid="uid://c8dn6btxhe82f" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 02.png" id="1_2a"]
+[ext_resource type="Texture2D" uid="uid://db6qjqfxrxl0g" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 03.png" id="1_3a"]
+[ext_resource type="Texture2D" uid="uid://cng40fh5kwnbh" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 04.png" id="1_4a"]
+[ext_resource type="Texture2D" uid="uid://bhqxmdn4xkqko" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 05.png" id="1_5a"]
+[ext_resource type="Texture2D" uid="uid://cqwp5jxgvtfql" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 06.png" id="1_6a"]
+[ext_resource type="Texture2D" uid="uid://dmyglgxu7vqxm" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 07.png" id="1_7a"]
+[ext_resource type="Texture2D" uid="uid://djyx0aq3kptby" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 08.png" id="1_8a"]
+[ext_resource type="Texture2D" uid="uid://c2uy5ybj3qfhp" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 09.png" id="1_9a"]
+[ext_resource type="Texture2D" uid="uid://dy4v0xwcnktmw" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 10.png" id="1_10a"]
+[ext_resource type="Texture2D" uid="uid://cjv7plnj3axbf" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 11.png" id="1_11a"]
+[ext_resource type="Texture2D" uid="uid://bhhjjvq3b2qvj" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 12.png" id="1_12a"]
+[ext_resource type="Texture2D" uid="uid://bmwdoqgrgbwcm" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 13.png" id="1_13a"]
+[ext_resource type="Texture2D" uid="uid://cvkrdow3bncls" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 14.png" id="1_14a"]
+[ext_resource type="Texture2D" uid="uid://b1q6tglhfp3lj" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 15.png" id="1_15a"]
+[ext_resource type="Texture2D" uid="uid://bt62qd7m8jnjs" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 16.png" id="1_16a"]
+[ext_resource type="Texture2D" uid="uid://cvy2u6qxnlyf8" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 17.png" id="1_17a"]
+[ext_resource type="Texture2D" uid="uid://dqv6jn5bkb6t7" path="res://sprites/Steamboat Willie Mouse File Pack Full/Idle/Idle 18.png" id="1_18a"]
+
+[ext_resource type="Texture2D" uid="uid://c3o8dnpvbha5p" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 00.png" id="2_0a"]
+[ext_resource type="Texture2D" uid="uid://b8g7k8rpgjcav" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 01.png" id="2_1a"]
+[ext_resource type="Texture2D" uid="uid://bqcngj5p7ky1i" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 02.png" id="2_2a"]
+[ext_resource type="Texture2D" uid="uid://c3gxdkp1hb2jp" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 03.png" id="2_3a"]
+[ext_resource type="Texture2D" uid="uid://cp7lqbr05fwpo" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 04.png" id="2_4a"]
+[ext_resource type="Texture2D" uid="uid://b8w52kjh1chqg" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 05.png" id="2_5a"]
+[ext_resource type="Texture2D" uid="uid://b4nnp5x3gvw8h" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 06.png" id="2_6a"]
+[ext_resource type="Texture2D" uid="uid://b5cskl0h7dpxr" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 07.png" id="2_7a"]
+[ext_resource type="Texture2D" uid="uid://bi5l7xr86pu8s" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 08.png" id="2_8a"]
+[ext_resource type="Texture2D" uid="uid://yj5r7kl3cdpt" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 09.png" id="2_9a"]
+[ext_resource type="Texture2D" uid="uid://d10jyqtfx8vuu" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 10.png" id="2_10a"]
+[ext_resource type="Texture2D" uid="uid://dkfdpe7bk1jkv" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 11.png" id="2_11a"]
+[ext_resource type="Texture2D" uid="uid://drxm47yn8p0jw" path="res://sprites/Steamboat Willie Mouse File Pack Full/Run/Run 12.png" id="2_12a"]
+
+[resource]
+animations = [{
+"frames": [
+ExtResource("1_0a"), ExtResource("1_1a"), ExtResource("1_2a"), ExtResource("1_3a"), 
+ExtResource("1_4a"), ExtResource("1_5a"), ExtResource("1_6a"), ExtResource("1_7a"), 
+ExtResource("1_8a"), ExtResource("1_9a"), ExtResource("1_10a"), ExtResource("1_11a"), 
+ExtResource("1_12a"), ExtResource("1_13a"), ExtResource("1_14a"), ExtResource("1_15a"), 
+ExtResource("1_16a"), ExtResource("1_17a"), ExtResource("1_18a")
+],
+"loop": true,
+"name": "idle",
+"speed": 8.0
+}, {
+"frames": [
+ExtResource("2_0a"), ExtResource("2_1a"), ExtResource("2_2a"), ExtResource("2_3a"), 
+ExtResource("2_4a"), ExtResource("2_5a"), ExtResource("2_6a"), ExtResource("2_7a"), 
+ExtResource("2_8a"), ExtResource("2_9a"), ExtResource("2_10a"), ExtResource("2_11a"), 
+ExtResource("2_12a")
+],
+"loop": true,
+"name": "run",
+"speed": 12.0
+}]
