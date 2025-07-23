@@ -64,9 +64,9 @@ func update_animation(direction: Vector2):
 		
 		# Flip sprite based on direction
 		if angle > PI/2 or angle < -PI/2:
-			animated_sprite.flip_h = true  # Moving left
+			animated_sprite.flip_h = false  # Moving left
 		else:
-			animated_sprite.flip_h = false  # Moving right
+			animated_sprite.flip_h = true  # Moving right
 	else:
 		animated_sprite.animation = "idle"
 	

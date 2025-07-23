@@ -15,12 +15,12 @@ func _ready():
 	player_node = get_tree().get_first_node_in_group("player")
 	survival_start_time = Time.get_unix_time_from_system()
 	
-	# Setup spawn timer
-	spawn_timer = Timer.new()
-	spawn_timer.wait_time = triangle_spawn_interval
-	spawn_timer.timeout.connect(spawn_triangle_swarm)
-	spawn_timer.autostart = true
-	add_child(spawn_timer)
+	# Setup spawn timer (DISABLED - towers and enemies disabled for now)
+	# spawn_timer = Timer.new()
+	# spawn_timer.wait_time = triangle_spawn_interval
+	# spawn_timer.timeout.connect(spawn_triangle_swarm)
+	# spawn_timer.autostart = true
+	# add_child(spawn_timer)
 
 func spawn_triangle_swarm():
 	# Spawn 3-5 triangles at random positions around the player

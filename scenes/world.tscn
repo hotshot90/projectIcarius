@@ -1,17 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxh1r8f8kp3nq"]
 
-[ext_resource type="Texture2D" uid="uid://b8mkx2f3vq9yw" path="res://sprites/medieval-hand-drawn-town-map_big.jpg" id="1_bg"]
+[ext_resource type="Script" path="res://scripts/isometric_grid.gd" id="1_grid"]
 [ext_resource type="Script" uid="uid://dw8mkx2f3vq0yw" path="res://scripts/world.gd" id="2_world"]
-
-[sub_resource type="TileSet" id="TileSet_1q2vw"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("2_world")
 
-[node name="BackgroundImage" type="Sprite2D" parent="."]
-texture = ExtResource("1_bg")
-centered = true
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_1q2vw")
-format = 2
+[node name="IsometricGrid" type="Node2D" parent="."]
+script = ExtResource("1_grid")

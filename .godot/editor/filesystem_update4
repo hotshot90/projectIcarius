@@ -1,3 +1,6 @@
 res://scenes/main.tscn
 res://scenes/player.tscn
 res://scripts/start_menu.gd
+res://scripts/world.gd
+res://scripts/game_manager.gd
+res://scripts/player.gd
