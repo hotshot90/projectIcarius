@@ -1,13 +1,92 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpvgw8ggdj04y"]
+[gd_scene load_steps=8 format=3 uid="uid://dpvgw8ggdj04y"]
 
 [ext_resource type="PackedScene" uid="uid://cxh1r8f8kp3nq" path="res://scenes/world.tscn" id="1_4pnkd"]
 [ext_resource type="PackedScene" uid="uid://b8dq8ncfnp36v" path="res://scenes/player.tscn" id="2_5k3gg"]
 [ext_resource type="PackedScene" uid="uid://b8hfr5l6kj2cx" path="res://scenes/game_manager.tscn" id="3_7h9kd"]
+[ext_resource type="PackedScene" path="res://scenes/minimap.tscn" id="4_minimap"]
+[ext_resource type="PackedScene" path="res://scenes/house.tscn" id="5_house"]
+[ext_resource type="Script" uid="uid://dtxhuep4mdymv" path="res://scripts/info_manager.gd" id="6_info"]
+[ext_resource type="Script" uid="uid://tcj575eeou4u" path="res://scripts/main.gd" id="7_main"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("7_main")
 
 [node name="World" parent="." instance=ExtResource("1_4pnkd")]
 
 [node name="Player" parent="." instance=ExtResource("2_5k3gg")]
+position = Vector2(100, 0)
+
+[node name="House" parent="." instance=ExtResource("5_house")]
 
 [node name="GameManager" parent="." instance=ExtResource("3_7h9kd")]
+
+[node name="InfoManager" type="Node" parent="."]
+script = ExtResource("6_info")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Minimap" parent="UI" instance=ExtResource("4_minimap")]
+layout_mode = 3
+anchors_preset = 1
+offset_left = -210.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 150.0
+grow_horizontal = 0
+
+[node name="InfoPanel" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -210.0
+offset_top = 160.0
+offset_right = -10.0
+offset_bottom = 360.0
+grow_horizontal = 0
+
+[node name="InfoBackground" type="ColorRect" parent="UI/InfoPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.7)
+
+[node name="InfoBorder" type="ColorRect" parent="UI/InfoPanel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.8, 0.8, 0.8, 1)
+
+[node name="InfoContent" type="ColorRect" parent="UI/InfoPanel/InfoBorder"]
+layout_mode = 0
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+mouse_filter = 2
+color = Color(0.1, 0.1, 0.1, 1)
+
+[node name="InfoText" type="VBoxContainer" parent="UI/InfoPanel/InfoBorder/InfoContent"]
+layout_mode = 0
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+theme_override_constants/separation = 5
+
+[node name="Title" type="Label" parent="UI/InfoPanel/InfoBorder/InfoContent/InfoText"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.5, 1)
+theme_override_font_sizes/font_size = 14
+
+[node name="Description" type="Label" parent="UI/InfoPanel/InfoBorder/InfoContent/InfoText"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 3
+
+[node name="Distance" type="Label" parent="UI/InfoPanel/InfoBorder/InfoContent/InfoText"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.8, 1, 1)
+theme_override_font_sizes/font_size = 10

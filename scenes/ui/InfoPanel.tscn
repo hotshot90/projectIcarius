@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://info_panel"]
+
+[ext_resource type="Script" path="res://scripts/ui/InfoPanel.gd" id="1_info"]
+
+[node name="InfoPanel" type="Control"]
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -230.0
+offset_top = 190.0
+offset_right = -10.0
+offset_bottom = 350.0
+script = ExtResource("1_info")
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+text = "INFORMATION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+text = "Entity Name"
+autowrap_mode = 3
+
+[node name="Description" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+text = "Entity description goes here."
+autowrap_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="Distance" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+text = "Distance: 0.0 units"
+
+[node name="Spacer" type="Control" parent="Panel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FutureFeatures" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+text = "• Future features will appear here
+• Inventory management
+• Resource storage
+• Building upgrades"
+autowrap_mode = 3

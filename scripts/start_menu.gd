@@ -13,4 +13,7 @@ func _on_quit_button_pressed():
 	get_tree().quit()
 
 func _focus_start_button():
-	$VBoxContainer/StartButton.grab_focus()
+	# Use the new path after UI redesign
+	var start_button = $MenuPanel/MenuBorder/MenuContent/VBoxContainer/StartButton
+	if start_button:
+		start_button.grab_focus()

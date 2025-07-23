@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4k5j8h7n3qw0"]
+
+[ext_resource type="Script" path="res://scripts/inventory.gd" id="1_inventory"]
+
+[node name="Inventory" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_inventory")
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="InventoryPanel" type="Control" parent="."]
+anchor_left = 0.25
+anchor_top = 0.15
+anchor_right = 0.75
+anchor_bottom = 0.85
+
+[node name="PanelBackground" type="ColorRect" parent="InventoryPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.1, 0.1, 0.15, 0.95)
+
+[node name="PanelBorder" type="ColorRect" parent="InventoryPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.7, 0.7, 0.9, 1)
+mouse_filter = 2
+
+[node name="InnerPanel" type="ColorRect" parent="InventoryPanel/PanelBorder"]
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+color = Color(0.15, 0.15, 0.2, 1)
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InventoryPanel/PanelBorder/InnerPanel"]
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+theme_override_constants/separation = 15
+
+[node name="HeaderPanel" type="ColorRect" parent="InventoryPanel/PanelBorder/InnerPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+color = Color(0.2, 0.2, 0.3, 1)
+
+[node name="Title" type="Label" parent="InventoryPanel/PanelBorder/InnerPanel/VBoxContainer/HeaderPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "INVENTORY"
+theme_override_colors/font_color = Color(0.9, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="InventoryPanel/PanelBorder/InnerPanel/VBoxContainer/HeaderPanel"]
+anchor_left = 0.9
+anchor_top = 0.2
+anchor_right = 0.98
+anchor_bottom = 0.8
+text = "✕"
+theme_override_colors/font_color = Color(1, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="ItemGrid" type="GridContainer" parent="InventoryPanel/PanelBorder/InnerPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 6
+
+[node name="ButtonContainer" type="HBoxContainer" parent="InventoryPanel/PanelBorder/InnerPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CloseButton" type="Button" parent="InventoryPanel/PanelBorder/InnerPanel/VBoxContainer/ButtonContainer"]
+layout_mode = 2
+text = "Close"
+theme_override_font_sizes/font_size = 16
+
+[connection signal="pressed" from="InventoryPanel/PanelBorder/InnerPanel/VBoxContainer/ButtonContainer/CloseButton" to="." method="_on_close_button_pressed"]

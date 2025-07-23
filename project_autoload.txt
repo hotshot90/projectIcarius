@@ -1,0 +1,9 @@
+# Add these to Project Settings -> AutoLoad
+
+GameManager: res://scripts/core/GameManager.gd (Singleton: true)
+SceneManager: res://scripts/core/SceneManager.gd (Singleton: true) 
+EntityManager: res://scripts/core/EntityManager.gd (Singleton: true)
+InputManager: res://scripts/core/InputManager.gd (Singleton: true)
+UIManager: res://scripts/ui/UIManager.gd (Singleton: true)
+
+# These should be loaded in this order for proper dependency management

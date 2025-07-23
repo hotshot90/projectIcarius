@@ -10,8 +10,8 @@ func _ready():
 
 func calculate_world_bounds():
 	# Calculate world bounds based on grid size
-	var grid_width = 40 * 64 / 2  # GRID_WIDTH * TILE_WIDTH / 2
-	var grid_height = 30 * 32 / 2  # GRID_HEIGHT * TILE_HEIGHT / 2
+	var grid_width = 400 * 64 / 2.0  # GRID_WIDTH * TILE_WIDTH / 2
+	var grid_height = 300 * 32 / 2.0  # GRID_HEIGHT * TILE_HEIGHT / 2
 	
 	world_bounds = Rect2(
 		Vector2(-grid_width, -grid_height),

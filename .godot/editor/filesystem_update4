@@ -4,3 +4,13 @@ res://scripts/start_menu.gd
 res://scripts/world.gd
 res://scripts/game_manager.gd
 res://scripts/player.gd
+res://scripts/isometric_grid.gd
+res://scenes/house_options_menu.tscn
+res://scenes/inventory.tscn
+res://scripts/house.gd
+res://scripts/info_manager.gd
+res://scripts/main.gd
+res://scripts/inventory.gd
+res://scripts/minimap.gd
+res://scripts/entities/Base.gd
+res://scripts/entities/Player.gd

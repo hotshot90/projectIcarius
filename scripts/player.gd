@@ -14,6 +14,13 @@ func _ready():
 	world_node = get_tree().get_first_node_in_group("world")
 	# Setup camera limits
 	setup_camera_limits()
+	# Ensure player is drawn on top of buildings
+	z_index = 1
+	# Enable smooth camera following
+	if camera:
+		camera.enabled = true
+		camera.position_smoothing_enabled = true
+		camera.position_smoothing_speed = 3.0
 
 func setup_camera_limits():
 	if camera and world_node and world_node.has_method("get_world_bounds"):
@@ -28,20 +35,43 @@ func setup_camera_limits():
 			print("Camera limits set to: ", bounds)
 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed:
-		var mouse_pos = get_global_mouse_position()
-		# Check if target position is within world bounds
-		if world_node and world_node.has_method("is_position_in_bounds"):
-			if world_node.is_position_in_bounds(mouse_pos):
-				target_position = mouse_pos
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		# Don't move if input was already handled (by UI or buildings)
+		if event.is_echo() or get_viewport().is_input_handled():
+			return
+			
+		# Don't block movement for info panel anymore - player can move while base info is shown
+		
+		# Check if we clicked on a UI element or building
+		var space_state = get_world_2d().direct_space_state
+		var query = PhysicsPointQueryParameters2D.new()
+		query.position = get_global_mouse_position()
+		query.collision_mask = 0xFFFFFFFF  # Check all layers
+		
+		var results = space_state.intersect_point(query)
+		
+		# Check if we clicked on any Area2D (buildings, interactables)
+		var clicked_on_building = false
+		for result in results:
+			if result.collider is Area2D:
+				clicked_on_building = true
+				break
+		
+		# Only move if we didn't click on a building
+		if not clicked_on_building:
+			var mouse_pos = get_global_mouse_position()
+			# Check if target position is within world bounds
+			if world_node and world_node.has_method("is_position_in_bounds"):
+				if world_node.is_position_in_bounds(mouse_pos):
+					target_position = mouse_pos
+				else:
+					print("Target outside world bounds")
 			else:
-				print("Target outside world bounds")
-		else:
-			target_position = mouse_pos
+				target_position = mouse_pos
 
 func _physics_process(_delta):
 	var direction = (target_position - global_position).normalized()
-	if global_position.distance_to(target_position) > 3.75:
+	if global_position.distance_to(target_position) > 5.0:
 		velocity = direction * move_speed
 		move_and_slide()
 		update_animation(direction)
@@ -71,3 +101,13 @@ func update_animation(direction: Vector2):
 		animated_sprite.animation = "idle"
 	
 	animated_sprite.play()
+
+func set_target_position(pos: Vector2):
+	# Allow external systems (like minimap) to set target position
+	if world_node and world_node.has_method("is_position_in_bounds"):
+		if world_node.is_position_in_bounds(pos):
+			target_position = pos
+		else:
+			print("Target outside world bounds")
+	else:
+		target_position = pos

@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://3st1h8rnf8ic"]
+
+[ext_resource type="PackedScene" uid="uid://cxh1r8f8kp3nq" path="res://scenes/world.tscn" id="1_world"]
+[ext_resource type="PackedScene" uid="uid://b8dq8ncfnp36v" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://b8hfr5l6kj2cx" path="res://scenes/game_manager.tscn" id="3_manager"]
+[ext_resource type="PackedScene" uid="uid://c8j2k5iam6qwp" path="res://scenes/entities/Base.tscn" id="4_base"]
+[ext_resource type="Script" path="res://scripts/Game.gd" id="5_game"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("5_game")
+
+[node name="World" parent="." instance=ExtResource("1_world")]
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(100, 0)
+
+[node name="Base" parent="." instance=ExtResource("4_base")]
+position = Vector2(0, 0)
+
+[node name="GameManager" parent="." instance=ExtResource("3_manager")]

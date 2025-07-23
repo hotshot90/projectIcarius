@@ -7,44 +7,84 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource("1_xk8ht")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.2, 0.2, 0.3, 1)
+color = Color(0.1, 0.1, 0.2, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="BackgroundPattern" type="ColorRect" parent="."]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+color = Color(0.15, 0.15, 0.25, 0.3)
+
+[node name="MenuPanel" type="ColorRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
-offset_bottom = 100.0
-theme_override_constants/separation = 20
+offset_left = -180.0
+offset_top = -150.0
+offset_right = 180.0
+offset_bottom = 150.0
+color = Color(0.2, 0.2, 0.35, 0.9)
 
-[node name="Title" type="Label" parent="VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
-text = "Project Icarius"
-theme_override_font_sizes/font_size = 32
+[node name="MenuBorder" type="ColorRect" parent="MenuPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.7, 0.7, 0.9, 1)
+mouse_filter = 2
+
+[node name="MenuContent" type="ColorRect" parent="MenuPanel/MenuBorder"]
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+color = Color(0.15, 0.15, 0.25, 1)
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel/MenuBorder/MenuContent"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+theme_override_constants/separation = 25
+
+[node name="Title" type="Label" parent="MenuPanel/MenuBorder/MenuContent/VBoxContainer"]
+custom_minimum_size = Vector2(280, 60)
+text = "PROJECT ICARIUS"
+theme_override_colors/font_color = Color(0.9, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 28
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
-text = "Start Game"
-theme_override_font_sizes/font_size = 20
+[node name="Subtitle" type="Label" parent="MenuPanel/MenuBorder/MenuContent/VBoxContainer"]
+custom_minimum_size = Vector2(280, 20)
+text = "Base Building & Resource Management"
+theme_override_colors/font_color = Color(0.7, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
-text = "Options"
-theme_override_font_sizes/font_size = 20
+[node name="StartButton" type="Button" parent="MenuPanel/MenuBorder/MenuContent/VBoxContainer"]
+custom_minimum_size = Vector2(250, 45)
+text = "▶ START GAME"
+theme_override_colors/font_color = Color(0.9, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 16
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(200, 50)
-text = "Quit"
-theme_override_font_sizes/font_size = 20
+[node name="OptionsButton" type="Button" parent="MenuPanel/MenuBorder/MenuContent/VBoxContainer"]
+custom_minimum_size = Vector2(250, 45)
+text = "⚙ OPTIONS"
+theme_override_colors/font_color = Color(0.9, 0.9, 1, 1)
+theme_override_font_sizes/font_size = 16
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="QuitButton" type="Button" parent="MenuPanel/MenuBorder/MenuContent/VBoxContainer"]
+custom_minimum_size = Vector2(250, 45)
+text = "✕ QUIT"
+theme_override_colors/font_color = Color(1, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 16
+
+[connection signal="pressed" from="MenuPanel/MenuBorder/MenuContent/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuPanel/MenuBorder/MenuContent/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MenuPanel/MenuBorder/MenuContent/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
